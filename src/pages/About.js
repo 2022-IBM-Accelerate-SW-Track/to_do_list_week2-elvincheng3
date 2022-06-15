@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import "./About.css";
-import profile_pic from "../assets/profile_pic.jpg";
-
+import React, { Component } from 'react';
+import { Stack, Card, CardContent, Divider } from "@mui/material";
+  
 export default class About extends Component {
   render() {
     return (
       <div>
-        {/* <p>Design your About me page </p> */}
-        <div class="split left">
-          <div className="centered">
-            <img
-              className="profile_image"
-              src={profile_pic}
-              alt="Profile Pic"
-            ></img>
-          </div>
-        </div>
-        <div className="split right">
-          <div className="centered">
-            <div className="name_title">Your Name</div>
-            <div className="brief_description">
-              Tell us about yourself in a few sentences. Tell us your interests
-              and say a fun fact about yourself.
-            </div>
-          </div>
-        </div>
+        <Stack direction="column" alignItems="center" spacing={2}>
+          <Card>
+            <CardContent sx={{p: 5}}>
+              <h1>Elvin</h1>
+              <h2>Student @ Northeastern University</h2>
+              <h2>Computer Science and Business</h2>
+            </CardContent>
+          </Card>
+          <Stack direction="row" alignItems="center" divider={<Divider orientation="vertical" flexItem />} spacing={2}>
+            <Card sx={{ minWidth: 150, p: 3 }}>
+              <h2>Java</h2>
+            </Card>
+            <Card sx={{ minWidth: 150, p: 3 }}>
+              <h2>Python</h2>
+            </Card>
+            <Card sx={{ minWidth: 150, p: 3 }}>
+              <h2>Swift</h2>
+            </Card>
+          </Stack>
+        </Stack>
       </div>
-    );
+    )
   }
 }
